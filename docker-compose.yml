@@ -5,6 +5,8 @@ services:
     image: rcjpisani/gollum-alpine
     container_name: gollum
     restart: "no"
+    environment:
+      - BRANCH
     ports:
       - "80:80"
     volumes:
@@ -13,4 +15,5 @@ services:
     command:
       - "--config=/etc/gollum/config.rb"
       - "--emoji"
+      - "--ref=${BRANCH}"
       - "--user-icons=gravatar"
