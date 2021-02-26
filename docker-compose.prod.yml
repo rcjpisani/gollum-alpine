@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  gollum:
+    restart: always
+    command:
+      - "--no-edit"

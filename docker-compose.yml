@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  gollum:
+    image: rcjpisani/gollum-alpine
+    container_name: gollum
+    restart: "no"
+    ports:
+      - "80:80"
+    volumes:
+      - ${PWD}/.config.rb:/etc/gollum/config.rb
+      - ${PWD}:/srv/wiki
+    command:
+      - "--config=/etc/gollum/config.rb"
+      - "--emoji"
+      - "--user-icons=gravatar"
